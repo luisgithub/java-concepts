@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 @SpringBootTest
@@ -43,6 +44,21 @@ public class StreamOperationsTest {
         Optional<Employee> employeeOptional = streamOperations.findAnyEmployee();
         employeeOptional.ifPresent(emp  -> System.out.println("Get any employee: " + emp));
         Assertions.assertTrue(employeeOptional.isPresent());
+    }
+
+    @Test
+    void concatenate_two_streams(){
+        Stream<Employee> employeeStream = streamOperations.concatenateTwoStreams();
+        System.out.println("Total items in stream: " + employeeStream.count());
+        Assertions.assertNotNull(employeeStream);
+    }
+
+    @Test
+    void filter_employee_stream_by_city(){
+        Stream<Employee> employeeStream = streamOperations.getFilteredEmployeesByCity();
+        System.out.println("Employees:");
+        employeeStream.forEach(System.out::println);
+        Assertions.assertNotNull(employeeStream);
     }
 
 }
