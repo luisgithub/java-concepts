@@ -2,23 +2,10 @@ package com.lugarsoft.java_concepts.domain;
 
 import com.lugarsoft.java_concepts.solid.openclose.PayCalculator;
 
-public class Employee {
+public class Employee extends Entity {
     public Employee() {
     }
 
-    public Employee(Long id, String firstName, String lastName, String email, String city, int age, EmployeeType employeeType, double salary, PayCalculator payCalculator) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.city = city;
-        this.age = age;
-        this.employeeType = employeeType;
-        this.salary = salary;
-        this.payCalculator = payCalculator;
-    }
-
-    private Long id;
     protected String firstName;
     protected String lastName;
     protected String email;
@@ -30,13 +17,6 @@ public class Employee {
 
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -94,9 +74,6 @@ public class Employee {
         this.salary = salary;
     }
 
-    public PayCalculator getPayCalculator() {
-        return payCalculator;
-    }
 
     public void setPayCalculator(PayCalculator payCalculator) {
         this.payCalculator = payCalculator;
@@ -104,5 +81,19 @@ public class Employee {
 
     public double calculatePay() {
         return payCalculator.calculatePayroll(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", city='" + city + '\'' +
+                ", age=" + age +
+                ", employeeType=" + employeeType +
+                ", salary=" + salary +
+                ", payCalculator=" + payCalculator +
+                '}';
     }
 }

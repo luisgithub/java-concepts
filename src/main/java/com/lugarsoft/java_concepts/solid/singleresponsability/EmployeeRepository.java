@@ -1,7 +1,6 @@
-package com.lugarsoft.java_concepts.solid.single;
+package com.lugarsoft.java_concepts.solid.singleresponsability;
 
 import com.lugarsoft.java_concepts.domain.Employee;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.lugarsoft.java_concepts;
+package com.lugarsoft.java_concepts.SOLID;
 
 import com.lugarsoft.java_concepts.domain.Employee;
 import com.lugarsoft.java_concepts.solid.openclose.PayrollService;
